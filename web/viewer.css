@@ -75,6 +75,7 @@
   --toolbarButton-bookmark-icon: url(images/toolbarButton-bookmark.svg);
   --toolbarButton-viewThumbnail-icon: url(images/toolbarButton-viewThumbnail.svg);
   --toolbarButton-viewOutline-icon: url(images/toolbarButton-viewOutline.svg);
+  --toolbarButton-viewStars-icon: url(images/toolbarButton-viewStars.svg);
   --toolbarButton-viewAttachments-icon: url(images/toolbarButton-viewAttachments.svg);
   --toolbarButton-viewLayers-icon: url(images/toolbarButton-viewLayers.svg);
   --toolbarButton-currentOutlineItem-icon: url(images/toolbarButton-currentOutlineItem.svg);
@@ -1025,6 +1026,11 @@ html[dir="rtl"] .toolbarButton#secondaryToolbarToggle::before {
 #viewThumbnail.toolbarButton::before {
   -webkit-mask-image: var(--toolbarButton-viewThumbnail-icon);
   mask-image: var(--toolbarButton-viewThumbnail-icon);
+}
+
+#viewStars.toolbarButton::before {
+  -webkit-mask-image: var(--toolbarButton-viewStars-icon);
+  mask-image: var(--toolbarButton-viewStars-icon);
 }
 
 #viewOutline.toolbarButton::before {

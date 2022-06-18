@@ -131,6 +131,7 @@ function getViewerConfiguration() {
       // Buttons
       thumbnailButton: document.getElementById("viewThumbnail"),
       outlineButton: document.getElementById("viewOutline"),
+      starsButton: document.getElementById("viewStars"),
       attachmentsButton: document.createElement('div'),
       layersButton: document.createElement('div'),
       annotationsButton: document.getElementById('viewAnnotations'),
@@ -140,6 +141,7 @@ function getViewerConfiguration() {
       attachmentsView: document.getElementById("attachmentsView"),
       layersView: document.getElementById("layersView"),
       annotationsView: document.getElementById('annotationsView'),
+      starsView: document.getElementById("starsView"),
       // View-specific options
       outlineOptionsContainer: document.getElementById(
         "outlineOptionsContainer"

@@ -37,6 +37,8 @@ const UI_NOTIFICATION_CLASS = "pdfSidebarNotification";
  *   opening/closing the sidebar.
  * @property {HTMLButtonElement} thumbnailButton - The button used to show
  *   the thumbnail view.
+ * @property {HTMLButtonElement} starsButton - The button used to show
+ *  the starred pages view.
  * @property {HTMLButtonElement} outlineButton - The button used to show
  *   the outline view.
  * @property {HTMLButtonElement} attachmentsButton - The button used to show
@@ -45,6 +47,8 @@ const UI_NOTIFICATION_CLASS = "pdfSidebarNotification";
  *   the layers view.
  * @property {HTMLDivElement} thumbnailView - The container in which
  *   the thumbnails are placed.
+ * @property {HTMLDivElement} starView - The container in which
+ *  the starred pages are placed.
  * @property {HTMLDivElement} outlineView - The container in which
  *   the outline is placed.
  * @property {HTMLDivElement} attachmentsView - The container in which
@@ -87,11 +91,13 @@ class PDFSidebar {
 
     this.thumbnailButton = elements.thumbnailButton;
     this.outlineButton = elements.outlineButton;
+    this.starsButton = elements.starsButton;
     this.attachmentsButton = elements.attachmentsButton;
     this.layersButton = elements.layersButton;
     this.annotationsButton = elements.annotationsButton;
 
     this.thumbnailView = elements.thumbnailView;
+    this.starsView = elements.starView;
     this.outlineView = elements.outlineView;
     this.attachmentsView = elements.attachmentsView;
     this.layersView = elements.layersView;
@@ -214,6 +220,11 @@ class PDFSidebar {
           return false;
         }
         break;
+      case SidebarView.STARS:
+        if (this.starsButton.disabled) {
+          return false;
+        }
+        break;
       default:
         console.error(`PDFSidebar._switchView: "${view}" is not a valid view.`);
         return false;
@@ -246,6 +257,7 @@ class PDFSidebar {
     );
     this.layersView.classList.toggle("hidden", view !== SidebarView.LAYERS);
     this.annotationsView.classList.toggle('hidden', view !== SidebarView.ANNOTATIONS);
+    this.starsView.classList.toggle("hidden", view !== SidebarView.STARS);
 
     // Finally, update view-specific CSS classes.
     this._outlineOptionsContainer.classList.toggle(
@@ -407,6 +419,10 @@ class PDFSidebar {
     // Buttons for switching views.
     this.thumbnailButton.addEventListener("click", () => {
       this.switchView(SidebarView.THUMBS);
+    });
+
+    this.starsButton.addEventListener("click", () => {
+      this.switchView(SidebarView.STARS);
     });
 
     this.outlineButton.addEventListener("click", () => {
