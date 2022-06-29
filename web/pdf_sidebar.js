@@ -47,7 +47,7 @@ const UI_NOTIFICATION_CLASS = "pdfSidebarNotification";
  *   the layers view.
  * @property {HTMLDivElement} thumbnailView - The container in which
  *   the thumbnails are placed.
- * @property {HTMLDivElement} starView - The container in which
+ * @property {HTMLDivElement} starsView - The container in which
  *  the starred pages are placed.
  * @property {HTMLDivElement} outlineView - The container in which
  *   the outline is placed.
@@ -97,7 +97,7 @@ class PDFSidebar {
     this.annotationsButton = elements.annotationsButton;
 
     this.thumbnailView = elements.thumbnailView;
-    this.starsView = elements.starView;
+    this.starsView = elements.starsView;
     this.outlineView = elements.outlineView;
     this.attachmentsView = elements.attachmentsView;
     this.layersView = elements.layersView;
