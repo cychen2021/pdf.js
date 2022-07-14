@@ -246,6 +246,10 @@ class PDFSidebar {
       "toggled",
       view === SidebarView.ATTACHMENTS
     );
+    this.starsButton.classList.toggle(
+      "toggled",
+      view === SidebarView.STARS
+    );
     this.layersButton.classList.toggle("toggled", view === SidebarView.LAYERS);
     this.annotationsButton.classList.toggle('toggled', view === SidebarView.ANNOTATIONS);
     // ... and for all views.
